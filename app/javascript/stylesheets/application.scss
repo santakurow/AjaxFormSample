@@ -1,0 +1,98 @@
+html, body, h1, h2, h3, h4, h5, h6, p, input, textarea {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  width: 1120px;
+  margin: 0 auto;
+}
+
+.main {
+  background-color: whitesmoke;
+  height: 100vh;
+}
+
+.task-heading {
+  margin-top: 16px;
+}
+
+.heading-title {
+  font-weight: normal;
+  margin: 12px 0 5px 0;
+}
+
+.field {
+  display: block;
+  margin-bottom: 12px;
+  #task_text {
+    width: 200px;
+    height: 22px;
+    padding: 14px;
+    font-size: 15px;
+    border-radius: 5px;
+  }
+}
+
+.btn {
+  display: inline-block;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+
+.btn-add {
+  background: dodgerblue;
+  color: white;
+  padding: 8px;
+  font-size: 14px;
+
+  &:hover {
+    // color: dodgerblue;
+    // background: white;
+    background: rgba($color: dodgerblue, $alpha: 0.9);
+  }
+}
+
+.btn-danger {
+  background: red;
+  color: white;
+  padding: 8px;
+  font-size: 14px;
+
+  &:hover {
+    background: rgba($color: red, $alpha: 0.8);
+  }
+}
+
+table {
+  tr {
+    td {
+      padding-right: 18px;
+      border-bottom: 1px solid gray;
+      &:last-child {
+        padding-right: 0;
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+#error {
+  color: red;
+}
+
+

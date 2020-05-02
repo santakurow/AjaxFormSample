@@ -1,14 +1,15 @@
-%h1 All Tasks
+%h1.task-heading タスク一覧
 
-Add new task
+%h3.heading-title Add task
 = form_with model: @task do |f|
-  = f.text_field :text
-  %br
-  = f.submit "Create"
+  .field
+    = f.text_field :text
+  .field
+  = f.submit "Create", class: "btn btn-add"
 %br
 
 - if @tasks.any?
-  %table
+  %table{"cellspacing": "0"}
     %tr#add-field
       %th Task
       %th created_time
@@ -23,4 +24,4 @@ Add new task
         %td
           = task.updated_at.strftime("%F %T")
         %td
-          = link_to "Delete", task_path(task), method: :delete, data: {confirm: "Are you sure?"}, remote: true, class: "delete"
+          = link_to "Delete", task_path(task), method: :delete, data: {confirm: "Are you sure?"}, remote: true, class: "btn btn-danger delete"
