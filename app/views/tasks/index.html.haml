@@ -7,18 +7,20 @@ Add new task
   = f.submit "Create"
 %br
 
-%table
-  %tr#add-field
-    %th Task
-    %th created_time
-    %th updated_time
-  - @tasks.each do |task|
-    %tr
-      %td
-        = task.text
-      %td
-        = task.created_at.strftime("%F %T")
-      %td
-        = task.updated_at.strftime("%F %T")
-    
-      
+- if @tasks.any?
+  %table
+    %tr#add-field
+      %th Task
+      %th created_time
+      %th updated_time
+      %th
+    - @tasks.each do |task|
+      %tr
+        %td
+          = task.text
+        %td
+          = task.created_at.strftime("%F %T")
+        %td
+          = task.updated_at.strftime("%F %T")
+        %td
+          = link_to "Delete", task_path(task), method: :delete, data: {confirm: "Are you sure?"}, remote: true, class: "delete"

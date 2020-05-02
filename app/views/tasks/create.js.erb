@@ -1,18 +1,40 @@
+var error_message = (add_task) => {
+  $("#error").remove();
+  var error_message = `<div id="error">タスクの登録に失敗しました。</div>`
+  add_task.before(error_message);
+}
+
 $(function(){
   let task_text = "<%= escape_javascript(@task.text) %>";
-  //var appendHtml = `<div class="action">${task_text}</div>`;
   var taskHtml = 
-  `<tr>
-    <td>
-      <%= @task.text %>
-    </td>
-    <td>
-      <%= @task.created_at %>
-    </td>
-    <td>
-      <%= @task.updated_at %>
-    </td>
-   </tr>`
+  `<% if @task.save %>
+    <tr>
+      <td>
+        <%= @task.text %>
+      </td>
+      <td>
+        <%= @task.created_at.strftime("%F %T") %>
+      </td>
+      <td>
+        <%= @task.updated_at.strftime("%F %T") %>
+      </td>
+      <td>
+        <%= link_to "Delete", task_path(@task), method: :delete, data: {confirm: "Are you sure?"}, remote: true, class: "delete" %>
+      </td>
+    </tr>
+   <% else %>
+    <div></div>
+   <% end %>`;
+  let add_task = $("#task_text");
+  if (add_task.val() == "") {
+    error_message(add_task);
+  }
+  else if (!add_task.val().match(/[^\s\t]/)) {
+    error_message(add_task);
+  }
+  else {
+    $("#error").remove();
+  }
   $("#add-field").after(taskHtml);
   $("#task_text").val("");
 })

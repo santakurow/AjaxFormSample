@@ -13,7 +13,18 @@ class TasksController < ApplicationController
     respond_to do |format|
       if @task.save
         format.js
+      else
+        # flash[:danger] = "タスクの登録に失敗しました。"
+        format.js
       end
+    end
+  end
+
+  def destroy
+    @task = Task.find(params[:id])
+    respond_to do |format|
+      @task.destroy
+      format.js {render layout: false}
     end
   end
 
