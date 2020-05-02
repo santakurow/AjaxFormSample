@@ -1,2 +1,24 @@
 %h1 All Tasks
 
+Add new task
+= form_with model: @task do |f|
+  = f.text_field :text
+  %br
+  = f.submit "Create"
+%br
+
+%table
+  %tr#add-field
+    %th Task
+    %th created_time
+    %th updated_time
+  - @tasks.each do |task|
+    %tr
+      %td
+        = task.text
+      %td
+        = task.created_at.strftime("%F %T")
+      %td
+        = task.updated_at.strftime("%F %T")
+    
+      

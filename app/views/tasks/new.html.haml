@@ -1,0 +1,10 @@
+%h1 Create Task
+
+= form_with model: @task do |f|
+  = f.label :text
+  %br
+  = f.text_field :text
+  %br
+  = f.submit "Create"
+
+#add-field

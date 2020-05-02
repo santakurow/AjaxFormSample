@@ -1,0 +1,18 @@
+$(function(){
+  let task_text = "<%= escape_javascript(@task.text) %>";
+  //var appendHtml = `<div class="action">${task_text}</div>`;
+  var taskHtml = 
+  `<tr>
+    <td>
+      <%= @task.text %>
+    </td>
+    <td>
+      <%= @task.created_at %>
+    </td>
+    <td>
+      <%= @task.updated_at %>
+    </td>
+   </tr>`
+  $("#add-field").after(taskHtml);
+  $("#task_text").val("");
+})
