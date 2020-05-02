@@ -1,24 +1,15 @@
-# README
+# FormTest
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+RailsのFormヘルパであるform_withを使ったajax非同期通信をタスクアプリを作りながら実装。
 
-Things you may want to cover:
+#### 言語バージョン
+* Ruby 2.6.4
 
-* Ruby version
+#### フレームワーク
+* Ruby on Rails 6
 
-* System dependencies
+#### ライブラリ
+* jQuery 3.5.0
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+#### DB
+* MySQL
