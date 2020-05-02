@@ -1,6 +1,6 @@
 # AjaxFormView
 
-RailsのFormヘルパであるform_withを使ったajax非同期通信をタスクアプリを作りながら実装。
+RailsのFormヘルパであるform_withを使ったajax非同期通信を簡単なタスクアプリを作りながら実装。
 
 #### 言語バージョン
 * Ruby 2.6.4
