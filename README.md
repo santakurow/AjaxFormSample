@@ -13,3 +13,7 @@ RailsのFormヘルパであるform_withを使ったajax非同期通信を簡単�
 
 #### DB
 * MySQL
+
+#### 使用した技術
+* haml-rails (gem)
+* webpack
