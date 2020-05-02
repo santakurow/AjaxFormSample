@@ -24,7 +24,7 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     respond_to do |format|
       @task.destroy
-      format.js {render layout: false}
+      format.js
     end
   end
 
