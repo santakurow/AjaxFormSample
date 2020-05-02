@@ -1,4 +1,4 @@
-# FormTest
+# AjaxFormView
 
 RailsのFormヘルパであるform_withを使ったajax非同期通信をタスクアプリを作りながら実装。
 
