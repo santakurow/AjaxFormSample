@@ -8,9 +8,9 @@
   = f.submit "Create", class: "btn btn-add"
 %br
 
-- if @tasks.any?
-  %table{"cellspacing": "0"}
-    %tr#add-field
+#add-field
+  %table.tbl{"cellspacing": "0"}
+    %tr
       %th Task
       %th created_time
       %th updated_time

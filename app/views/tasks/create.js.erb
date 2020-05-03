@@ -4,13 +4,15 @@ var error_message = (add_task) => {
   add_task.before(error_message);
 }
 
+
 $(function(){
-  let task_text = "<%= escape_javascript(@task.text) %>";
+  let task_text = "<%= escape_javascript(@task.text) %>"
+
   var taskHtml = 
   `<% if @task.save %>
     <tr>
       <td>
-        <%= @task.text %>
+        ${task_text}
       </td>
       <td>
         <%= @task.created_at.strftime("%F %T") %>
@@ -25,6 +27,9 @@ $(function(){
    <% else %>
     <div></div>
    <% end %>`;
+
+  console.log(task_text);
+   
   let add_task = $("#task_text");
   if (add_task.val() == "") {
     error_message(add_task);
@@ -35,6 +40,6 @@ $(function(){
   else {
     $("#error").remove();
   }
-  $("#add-field").after(taskHtml);
+  $("#add-field table tr").first().after(taskHtml);
   $("#task_text").val("");
 })
